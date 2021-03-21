@@ -49,14 +49,13 @@ function App() {
               }}
               className="trails-text"
             >
-              <PokemonCard pokemon={pokemondata[i]} />;
+              <PokemonCard pokemon={pokemondata[i]} />
             </animated.div>
           ))}
         </div>
       )}
 
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        <animated.div style={props}>I will fade in</animated.div>
         {pokemon !== undefined && pokemon}
       </div>
     </div>

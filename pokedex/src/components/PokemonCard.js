@@ -50,7 +50,7 @@ const styles = {
   Canvas: {
     borderColor: "#272121",
     backgroundColor: "#443737",
-    margin: "10px",
+    margin: "5px",
     padding: "5px",
 
     minWidth: "150px",
