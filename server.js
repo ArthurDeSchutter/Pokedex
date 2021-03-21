@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 var Pokedex = require("pokedex-promise-v2");
+app.use(express.static(path.join(__dirname, "pokedex/build")));
 
 //app.use(express.static(path.join(__dirname, "build")));
 
