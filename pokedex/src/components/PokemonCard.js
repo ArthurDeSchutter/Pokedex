@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {useSpring, animated} from 'react-spring'
+import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 
 
 const PokemonCard = (props) => {
@@ -31,9 +32,12 @@ const PokemonCard = (props) => {
   return (
     <>
       {pokemon !== undefined && (
+        <DragDropContainer targetKey="foo" dragData={pokemon}  >
         <div style={styles.Canvas} 
+        /*
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
+        */
         >
           <img style={styles.font} src={pokemon.sprites.front_default}></img>
           <h5 style={styles.font}>{pokemon.name}</h5>
@@ -42,6 +46,7 @@ const PokemonCard = (props) => {
           </p>
           <p style={styles.font}>type: {pokemon.types[0].type.name}</p>
         </div>
+        </DragDropContainer>
       )}
     </>
   );

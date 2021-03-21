@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
+import BattleZone from "./components/BattleZone";
+
 import PokemonCard from "./components/PokemonCard";
 import { useSpring, animated, config, useTrail } from "react-spring";
 
@@ -36,8 +38,9 @@ function App() {
   return (
     <div>
       <Header></Header>
+      <div style={{ display: "flex"}}>
       {pokemondata !== undefined && (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", maxWidth: "50%", }}>
           {trail.map(({ x, ...otherProps }, i) => (
             <animated.div
               key={pokemondata[i]}
@@ -53,8 +56,12 @@ function App() {
             </animated.div>
           ))}
         </div>
+        
       )}
-
+      <div style={{ width: "50%", flexWrap: "wrap" }}>
+        <BattleZone/>
+      </div>      
+      </div>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         {pokemon !== undefined && pokemon}
       </div>
