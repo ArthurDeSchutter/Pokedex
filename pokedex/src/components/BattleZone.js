@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 import PokemonCard from "./PokemonCard";
+import Battle from "./Battle";
+
 import { useSpring, animated, useTransition } from "react-spring";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,7 +12,6 @@ const BattleZone = () => {
   const [pokemon2, setpokemon2] = useState();
 
   const renderPokemon = (DropTarget) => {
-    console.log(DropTarget.dragData);
     setpokemon(DropTarget.dragData);
   };
   const renderPokemon2 = (DropTarget) => {
@@ -44,7 +45,7 @@ const BattleZone = () => {
         </DropTarget>
 
       </div>
-      <Button variant="warning">Warning</Button>{' '}
+      <Button onClick={() => Battle(pokemon,pokemon2)}variant="warning">Warning</Button>{' '}
 
     </>
   );
