@@ -33,7 +33,7 @@ const PokemonCard = (props) => {
     <>
       {pokemon !== undefined && (
         <DragDropContainer targetKey="foo" dragData={pokemon}  >
-        <div style={styles.Canvas} 
+        <div style={styles.Canvas}
         /*
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
@@ -54,10 +54,10 @@ const PokemonCard = (props) => {
 const styles = {
   Canvas: {
     borderColor: "#272121",
-    backgroundColor: "#443737",
+    backgroundColor: "#003a70",
     margin: "5px",
     padding: "5px",
-
+    boxShadow: "2px 2px 3px 	#ffcb05",
     minWidth: "150px",
     display:'flex',
     flexDirection: "column",
@@ -70,9 +70,9 @@ const styles = {
     minWidth: "80%",
     padding: "2px",
     paddingTop: '2px',
-    backgroundColor: "#272121",
+    backgroundColor: "#3d7dca",
 
-    color: "#387c6d",
+    color: "	#ffcb05",
     margin: "5px",
     textAllign: "left",
   },

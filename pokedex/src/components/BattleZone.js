@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 import PokemonCard from "./PokemonCard";
+import { useSpring, animated, useTransition } from "react-spring";
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const BattleZone = () => {
   const [pokemon, setpokemon] = useState();
@@ -16,32 +19,40 @@ const BattleZone = () => {
   };
 
   return (
-    <div>
-      <h1> Battle</h1>
-      <DropTarget targetKey="foo" onHit={renderPokemon}>
-        {pokemon !== undefined ? (
-          <PokemonCard pokemon={pokemon} />
-        ) : (
-          <div style={styles.dragDiv}><p>Drop something in me</p></div>
-        )}
-      </DropTarget>
-      <DropTarget targetKey="foo" onHit={renderPokemon2}>
-        {pokemon2 !== undefined ? (
-          <PokemonCard pokemon={pokemon2} />
-        ) : (
-          <div style={styles.dragDiv}><p>Drop something in me</p></div>
-        )}
-      </DropTarget>
+    <>
+      <h1 style={styles.header}> Battle</h1>
+      <div style={{ display: "flex" }}>
+        <DropTarget targetKey="foo" onHit={renderPokemon}>
+          {pokemon !== undefined ? (
 
-    </div>
+            <PokemonCard pokemon={pokemon} />
+          ) : (
+            <div style={styles.dragDiv}>
+              <p  style={styles.header}>Drop something in me</p>
+            </div>
+          )}
+        </DropTarget>
+        <h2  style={styles.header}>V.S.</h2>
+        <DropTarget targetKey="foo" onHit={renderPokemon2}>
+          {pokemon2 !== undefined ? (
+            <PokemonCard pokemon={pokemon2} />
+          ) : (
+            <div style={styles.dragDiv}>
+              <p  style={styles.header}>Drop something in me</p>
+            </div>
+          )}
+        </DropTarget>
+
+      </div>
+      <Button variant="warning">Warning</Button>{' '}
+
+    </>
   );
 };
 
 const styles = {
   header: {
-    backgroundColor: "#e9896a",
-    display: "absolute",
-    margin: "20",
+    color: "#ffcb05",
   },
   headerTitle: {
     color: "#387c6d",
@@ -49,18 +60,17 @@ const styles = {
     margin: "0",
   },
   dragDiv: {
+
     color: "#387c6d",
-    height:'200px',
-    width:'200px',
-    backgroundColor: "#443737",
+    height: "200px",
+    width: "200px",
+    backgroundColor: "#003a70",
     borderRadius: "10px",
     alignItems: "center",
     textAllign: "center",
-    display:'flex',
-    justifyContent: 'center',
-
+    display: "flex",
+    justifyContent: "center",
   },
-
 };
 
 export default BattleZone;

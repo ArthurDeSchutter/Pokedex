@@ -5,7 +5,7 @@ import BattleZone from "./components/BattleZone";
 import PokemonCard from "./components/PokemonCard";
 import { useSpring, animated, config, useTrail } from "react-spring";
 
-//https://colorhunt.co/palette/158462
+//https://color-hex.org/color-palettes/137
 function App() {
   const [pokemon, setpokemon] = useState();
   const [pokemondata, setpokemondata] = useState();
@@ -33,7 +33,7 @@ function App() {
         setpokemon(items);
       });*/
   }, []);
-  document.body.style.backgroundColor = "#343f56";
+  document.body.style.backgroundColor = "	#3d7dca";
 
   return (
     <div>
@@ -41,6 +41,7 @@ function App() {
       <div style={{ display: "flex"}}>
       {pokemondata !== undefined && (
         <div style={{ display: "flex", flexWrap: "wrap", maxWidth: "50%", }}>
+
           {trail.map(({ x, ...otherProps }, i) => (
             <animated.div
               key={pokemondata[i]}

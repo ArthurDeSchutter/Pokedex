@@ -10,12 +10,12 @@ const Header = () => {
 
 const styles = {
   header: {
-    backgroundColor: "#e9896a",
+    backgroundColor: "#003a70",
     display: "absolute",
     margin: "20"
   },
   headerTitle: {
-    color: "#387c6d",
+    color: "#ffcb05",
     display: "absolute",
     margin: "0"
   },
