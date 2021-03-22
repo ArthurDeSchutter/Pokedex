@@ -21,6 +21,7 @@ const BattleZone = () => {
 
   return (
     <>
+    <div style={styles.Canvas}>
       <h1 style={styles.header}> Battle</h1>
       <div style={{ display: "flex" }}>
         <DropTarget targetKey="foo" onHit={renderPokemon}>
@@ -45,8 +46,8 @@ const BattleZone = () => {
         </DropTarget>
 
       </div>
-      <Button onClick={() => Battle(pokemon,pokemon2)}variant="warning">Warning</Button>{' '}
-
+      <Button onClick={() => Battle(pokemon,pokemon2)}variant="danger">Battle!</Button>{' '}
+      </div>
     </>
   );
 };
@@ -72,6 +73,14 @@ const styles = {
     display: "flex",
     justifyContent: "center",
   },
+  Canvas: {
+    display:'flex',
+    flexDirection: "column",
+    justifyContent: 'center',
+    alignItems: "center",
+    borderRadius: "10px",
+  },
+
 };
 
 export default BattleZone;
