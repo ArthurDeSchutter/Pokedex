@@ -18,15 +18,15 @@ const Battle = async(poke1, poke2) => {
         if (pokemon2.hp < 1) {
             //return winner
             console.log(pokemon1.name)
-            return pokemon1.name
+            return poke1
         }
         //pokemon 1 attacks pokemon 2
         rndattack = getRandomInt(pokemon2.attacks.length)
         pokemon1.hp = attack(pokemon2.attacks[rndattack], pokemon1)
         if (pokemon1.hp < 1) {
             //return winner
-            console.log(pokemon2.name)
-            return pokemon2.name
+            console.log(pokemon2)
+            return poke2
         }
         
     }
