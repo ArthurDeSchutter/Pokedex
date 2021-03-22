@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 var Pokedex = require("pokedex-promise-v2");
 app.use(express.static(path.join(__dirname, "pokedex/build")));
-
+//droplet pass: &Qs@p4sG$!itqnn
 //app.use(express.static(path.join(__dirname, "build")));
 
 var P = new Pokedex();
