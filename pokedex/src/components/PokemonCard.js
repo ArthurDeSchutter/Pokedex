@@ -1,32 +1,18 @@
 import React, { useEffect, useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {useSpring, animated} from 'react-spring'
-import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
+import { DragDropContainer } from 'react-drag-drop-container';
 
 
 const PokemonCard = (props) => {
   const [pokemon, setpokemon] = useState();
-  let { name, url } = props.pokemon;
+  let { name } = props.pokemon;
   console.log("card rendered");
 
-  const mouseEnter = (e) => {
-    //prevent bubbling
-    e.stopPropagation();  
-    e.target.style.backgroundColor = '#387c6d'
-  }
-  const mouseLeave = (e) => {
-    //prevent bubbling
-    e.stopPropagation();  
-    //get original value back
-    e.target.style.backgroundColor = styles.Canvas.backgroundColor
-  }
 
   useEffect(() => {
     fetch(`/getpokemon/${name}`)
       .then((response) => response.json())
       .then((data) => setpokemon(data));
-    //.then((data) => console.log(data));
   }, []);
 
   return (
@@ -39,7 +25,7 @@ const PokemonCard = (props) => {
         onMouseLeave={mouseLeave}
         */
         >
-          <img style={styles.font} src={pokemon.sprites.front_default}></img>
+          <img style={styles.font} src={pokemon.sprites.front_default} alt={'sprite'}></img>
           <h5 style={styles.font}>{pokemon.name}</h5>
           <p style={styles.font}>
             {pokemon.stats[0].stat.name}: {pokemon.stats[0].base_stat}
@@ -55,10 +41,10 @@ const styles = {
   Canvas: {
     borderColor: "#272121",
     backgroundColor: "#003a70",
-    margin: "5px",
-    padding: "5px",
-    boxShadow: "2px 2px 3px 	#ffcb05",
-    minWidth: "150px",
+    margin: "6px",
+    padding: "7px",
+    boxShadow: "3px 3px 4px #ffcb05",
+    minWidth: "225px",
     display:'flex',
     flexDirection: "column",
     justifyContent: 'center',
@@ -71,7 +57,6 @@ const styles = {
     padding: "2px",
     paddingTop: '2px',
     backgroundColor: "#3d7dca",
-
     color: "	#ffcb05",
     margin: "5px",
     textAllign: "left",

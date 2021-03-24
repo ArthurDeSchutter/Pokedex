@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DragDropContainer, DropTarget } from "react-drag-drop-container";
+import { DropTarget } from "react-drag-drop-container";
 import PokemonCard from "./PokemonCard";
 import Battle from "./Battle";
 
@@ -77,7 +77,7 @@ const BattleZone = () => {
                   <PokemonCard pokemon={pokemon} />
                 ) : (
                   <div style={styles.dragDiv}>
-                    <p style={styles.header}>Drop something in me</p>
+                    <h6 style={styles.header}>Drop something in me</h6>
                   </div>
                 )}
               </DropTarget>
@@ -87,7 +87,7 @@ const BattleZone = () => {
                   <PokemonCard pokemon={pokemon2} />
                 ) : (
                   <div style={styles.dragDiv}>
-                    <p style={styles.header}>Drop something in me</p>
+                    <h6 style={styles.header}>Drop something in me</h6>
                   </div>
                 )}
               </DropTarget>
@@ -139,6 +139,7 @@ const BattleZone = () => {
 const styles = {
   header: {
     color: "#ffcb05",
+    padding:'5px'
   },
   headerTitle: {
     color: "#387c6d",
