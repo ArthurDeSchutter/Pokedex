@@ -51,7 +51,7 @@ const BattleZone = () => {
 
   return (
     <>
-      <div >
+      <div style={{padding: '10px'}}>
         <a.div
           hidden={flipped}
           style={
