@@ -35,7 +35,7 @@ const BattleZone = () => {
     }
   };
 
-  //reset the dragtargets 
+  //reset the dragtargets
   const resetBattle = async () => {
     console.log("game reset");
     setwinner(undefined);
@@ -45,7 +45,7 @@ const BattleZone = () => {
     set(false);
   };
 
-  //set the state with a pokemon object 
+  //set the state with a pokemon object
   //so it will render when a pokemon is dropped in the droptarget
   const renderPokemon = (DropTarget) => {
     setpokemon(DropTarget.dragData);
@@ -68,7 +68,7 @@ const BattleZone = () => {
           <div style={styles.Canvas}>
             <h1 style={styles.header}> Battle</h1>
             <div style={{ display: "flex" }}>
-            <DropTarget targetKey="foo" onHit={renderPokemon}>
+              <DropTarget targetKey="foo" onHit={renderPokemon}>
                 {pokemon !== undefined ? (
                   <PokemonCard pokemon={pokemon} />
                 ) : (
@@ -116,7 +116,11 @@ const BattleZone = () => {
               <div style={styles.Canvas}>
                 <h1 style={styles.header}> Winner!</h1>
                 <PokemonCard pokemon={winner} />
-                <Button onClick={resetBattle} variant="success">
+                <Button
+                  onClick={resetBattle}
+                  variant="success"
+                  style={{ margin: "5px" }}
+                >
                   reset
                 </Button>
               </div>
