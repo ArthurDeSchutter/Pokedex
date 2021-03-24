@@ -12,7 +12,7 @@ function App() {
   const [state, setState] = useState(true);
 
   const props = useSpring({ config: config.default });
-  const trail = useTrail(10, {
+  const trail = useTrail(20, {
     config,
     from: { opacity: 0, x: 20 },
     to: { opacity: state ? 1 : 0, x: state ? 20 : 10 },
@@ -23,15 +23,6 @@ function App() {
       .then((data) => setpokemondata(data))
       .then((data) => console.log(data));
 
-    /*
-      .then((data) => {
-        //only get the first 10 pokemon to take it easy on the api
-        //map over the array and return a pokemonCard component
-        var items = data.slice(0, 10).map((pokemon) => {
-          return <PokemonCard pokemon={pokemon} />;
-        });
-        setpokemon(items);
-      });*/
   }, []);
   document.body.style.backgroundColor = "	#3d7dca";
 
@@ -40,7 +31,7 @@ function App() {
       <Header></Header>
       <div style={{ display: "flex"}}>
       {pokemondata !== undefined && (
-        <div style={{ display: "flex", flexWrap: "wrap", maxWidth: "50%", }}>
+        <div style={{ display: "flex", flexWrap: "wrap", maxWidth: "50%", overflowY: 'scroll', height: '92vh' }}>
 
           {trail.map(({ x, ...otherProps }, i) => (
             <animated.div
