@@ -19,10 +19,14 @@ const BattleZone = () => {
     config: { mass: 5, tension: 500, friction: 80 },
   });
   const getBattleOutcome = async () => {
-    let winner = await Battle(pokemon, pokemon2);
-    console.log(winner);
-    setwinner(winner);
-    set((state) => !state);
+    if (pokemon && pokemon2 !== undefined) {
+      let winner = await Battle(pokemon, pokemon2);
+      console.log(winner);
+      setwinner(winner);
+      set((state) => !state);
+    } else {
+      alert("please select 2 pokemon")
+    }
   };
   const resetBattle = async () => {
     console.log('game reset');
@@ -90,11 +94,13 @@ const BattleZone = () => {
         >
           {winner !== undefined && (
             <>
+            <div style={styles.Canvas}>
               <h1 style={styles.header}> Winner!</h1>
               <PokemonCard pokemon={winner} />
               <Button onClick={resetBattle} variant="success">
                 reset
               </Button>
+              </div>
             </>
           )}
         </a.div>
