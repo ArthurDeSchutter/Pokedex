@@ -25,14 +25,14 @@ const BattleZone = () => {
       setwinner(winner);
       set((state) => !state);
     } else {
-      alert("please select 2 pokemon")
+      alert("please select 2 pokemon");
     }
   };
   const resetBattle = async () => {
-    console.log('game reset');
+    console.log("game reset");
     setwinner(undefined);
     setpokemon(undefined);
-    setpokemon2(undefined)
+    setpokemon2(undefined);
 
     set((state) => !state);
   };
@@ -55,31 +55,34 @@ const BattleZone = () => {
             { opacity: opacity.interpolate((o) => 1 - o), transform })
           }
         >
-          <h1 style={styles.header}> Battle</h1>
-          <div style={{ display: "flex" }}>
-            <DropTarget targetKey="foo" onHit={renderPokemon}>
-              {pokemon !== undefined ? (
-                <PokemonCard pokemon={pokemon} />
-              ) : (
-                <div style={styles.dragDiv}>
-                  <p style={styles.header}>Drop something in me</p>
-                </div>
-              )}
-            </DropTarget>
-            <h2 style={styles.header}>V.S.</h2>
-            <DropTarget targetKey="foo" onHit={renderPokemon2}>
-              {pokemon2 !== undefined ? (
-                <PokemonCard pokemon={pokemon2} />
-              ) : (
-                <div style={styles.dragDiv}>
-                  <p style={styles.header}>Drop something in me</p>
-                </div>
-              )}
-            </DropTarget>
-          </div>
-          <Button onClick={getBattleOutcome} variant="danger">
+          <div style={styles.Canvas}>
+            <h1 style={styles.header}> Battle</h1>
+            <div style={{ display: "flex" }}>
+              <DropTarget targetKey="foo" onHit={renderPokemon}>
+                {pokemon !== undefined ? (
+                  <PokemonCard pokemon={pokemon} />
+                ) : (
+                  <div style={styles.dragDiv}>
+                    <p style={styles.header}>Drop something in me</p>
+                  </div>
+                )}
+              </DropTarget>
+              <h2 style={styles.header}>V.S.</h2>
+              <DropTarget targetKey="foo" onHit={renderPokemon2}>
+                {pokemon2 !== undefined ? (
+                  <PokemonCard pokemon={pokemon2} />
+                ) : (
+                  <div style={styles.dragDiv}>
+                    <p style={styles.header}>Drop something in me</p>
+                  </div>
+                )}
+              </DropTarget>
+            </div>
+            <Button onClick={getBattleOutcome} variant="danger" style={{margin: '5px'}}>
             Battle!
           </Button>
+
+          </div>
         </a.div>
 
         <a.div
@@ -94,12 +97,12 @@ const BattleZone = () => {
         >
           {winner !== undefined && (
             <>
-            <div style={styles.Canvas}>
-              <h1 style={styles.header}> Winner!</h1>
-              <PokemonCard pokemon={winner} />
-              <Button onClick={resetBattle} variant="success">
-                reset
-              </Button>
+              <div style={styles.Canvas}>
+                <h1 style={styles.header}> Winner!</h1>
+                <PokemonCard pokemon={winner} />
+                <Button onClick={resetBattle} variant="success">
+                  reset
+                </Button>
               </div>
             </>
           )}
