@@ -22,16 +22,20 @@ const BattleZone = () => {
 
   //calculate the winner by selecting a random attack 1 by 1 and return the winner
   const getBattleOutcome = async () => {
-    //check if poke 1 and 2 are the same
+    //check if poke 1 and 2 are the same or undefined
     if (pokemon === pokemon2) {
-      alert("pokemon cant fight themselves");
-    } else if (pokemon && pokemon2 !== undefined) {
+      alert("please select 2 different pokemon");
+    }
+    //2 pokemon selected they can fight now
+    else if (pokemon && pokemon2 !== undefined) {
       let winner = await Battle(pokemon, pokemon2);
       console.log(winner);
       setwinner(winner);
       set((state) => !state);
-    } else {
-      alert("please select 2 pokemon");
+    }
+    //1 of the pokemon is undefined
+    else {
+      alert("please select another pokemon");
     }
   };
 
