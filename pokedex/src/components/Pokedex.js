@@ -5,15 +5,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Pokedex = () => {
   const [pokemondata, setpokemondata] = useState();
-  const [state, setState] = useState(true);
 
   //adjust the first argumetn of useTrail to edit the amount
   //of pokemon loadded
   const trail = useTrail(20, {
     config,
     from: { opacity: 0, x: 20 },
-    to: { opacity: state ? 1 : 0, x: state ? 20 : 10 },
+    to: { opacity:  1 , x:   20  },
   });
+  
   useEffect(() => {
     fetch("/getpokemon")
       .then((response) => response.json())
