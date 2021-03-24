@@ -8,6 +8,10 @@ app.use(express.static(path.join(__dirname, "pokedex/build")));
 
 var P = new Pokedex();
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "pokedex/build", "index.html"));
+});
+
 app.get("/getpokemon", (req, res) => {
   P.getPokemonsList().then(function (response) {
     console.log(response.results);
@@ -30,8 +34,8 @@ app.get("/getpokemon/:id", (req, res) => {
     });
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "pokedex/build", "index.html"));
+app.get("/CV", (req, res) => {
+  res.sendFile(path.join(__dirname, "pokedex/public", "CV.json"));
 });
 
 const PORT = process.env.PORT || 8080;

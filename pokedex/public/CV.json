@@ -1,0 +1,340 @@
+{
+	"awards": {
+		"heading": "Awards",
+		"visible": true
+	},
+	"certifications": {
+		"heading": "Certifications",
+		"visible": true
+	},
+	"education": {
+		"heading": "opleiding",
+		"items": [
+			{
+				"degree": "middelbaar",
+				"endDate": "",
+				"field": "grafische communicatie en vormgeving",
+				"gpa": "",
+				"id": "8aa1756d-caef-4669-a0bb-ae3c9ca2a425",
+				"institution": "VTST",
+				"startDate": "",
+				"summary": ""
+			},
+			{
+				"degree": "graduaat",
+				"endDate": "",
+				"field": "Programmeren",
+				"gpa": "",
+				"id": "62bc6f3e-68b0-4868-8274-5f966b7fb9d2",
+				"institution": "AP hogeschool",
+				"startDate": "",
+				"summary": ""
+			}
+		],
+		"visible": true
+	},
+	"hobbies": {
+		"heading": "Hobby's",
+		"items": [
+			{
+				"id": "3d89b88d-cd4c-4db9-a673-36f68b3358cc",
+				"name": "opleiding Brandweerman"
+			},
+			{
+				"id": "a5437212-1810-451c-a430-887645e83727",
+				"name": "arduino"
+			},
+			{
+				"id": "800f0d9b-e8f8-4a78-a07b-30a178691c95",
+				"name": "fitness"
+			},
+			{
+				"id": "c4835102-aebc-4934-aeb2-2ee143dce974",
+				"name": "Raspberry Pi projects"
+			},
+			{
+				"name": "3D Printing/Design",
+				"id": "83860905-1749-4a08-81d6-68460420104f"
+			}
+		],
+		"visible": true
+	},
+	"languages": {
+		"heading": "Languages",
+		"items": [
+			{
+				"fluency": "moedertaal",
+				"id": "f15ecb5b-3990-46e4-bc60-3b1b74a7e81d",
+				"name": "Nederlands"
+			},
+			{
+				"fluency": "vloeiend",
+				"id": "2d3b4aaa-1d81-4e12-903e-dfef399fb83a",
+				"name": "engels"
+			},
+			{
+				"fluency": "matig",
+				"id": "73dbcabc-94bd-4a6e-94a6-f30ae03be1f5",
+				"name": "frans"
+			}
+		],
+		"visible": true
+	},
+	"metadata": {
+		"colors": {
+			"background": "#FFFFFF",
+			"primary": "#5875DB",
+			"text": "#444444"
+		},
+		"font": "Montserrat",
+		"language": "en",
+		"layout": {
+			"castform": [
+				[
+					"awards",
+					"certifications",
+					"languages",
+					"hobbies"
+				],
+				[
+					"objective",
+					"work",
+					"education",
+					"skills",
+					"projects",
+					"references"
+				]
+			],
+			"celebi": [
+				[
+					"awards",
+					"certifications",
+					"languages",
+					"hobbies"
+				],
+				[
+					"objective",
+					"work",
+					"education",
+					"skills",
+					"projects",
+					"references"
+				]
+			],
+			"gengar": [
+				[
+					"objective",
+					"skills"
+				],
+				[
+					"awards",
+					"certifications",
+					"languages",
+					"references",
+					"hobbies"
+				],
+				[
+					"work",
+					"education",
+					"projects"
+				]
+			],
+			"glalie": [
+				[
+					"awards",
+					"certifications",
+					"hobbies"
+				],
+				[
+					"objective",
+					"work",
+					"education",
+					"skills",
+					"projects",
+					"languages",
+					"references"
+				]
+			],
+			"onyx": [
+				[
+					"objective",
+					"work",
+					"education",
+					"projects"
+				],
+				[
+					"hobbies",
+					"languages",
+					"awards",
+					"certifications"
+				],
+				[
+					"skills",
+					"references"
+				]
+			],
+			"pikachu": [
+				[
+					"skills",
+					"languages",
+					"hobbies",
+					"awards",
+					"certifications"
+				],
+				[
+					"work",
+					"education",
+					"projects",
+					"references"
+				]
+			]
+		},
+		"template": "onyx"
+	},
+	"objective": {
+		"body": "",
+		"heading": "Objective",
+		"visible": true
+	},
+	"preview": "https://images.unsplash.com/photo-1601551993375-11836397f554?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=400",
+	"profile": {
+		"address": {
+			"city": "zandhoven",
+			"line1": "mussenbaan",
+			"line2": "29",
+			"pincode": "2240"
+		},
+		"email": "deschutterarthur1@gmail.com",
+		"firstName": "Arthur",
+		"heading": "",
+		"lastName": "De Schutter",
+		"phone": "+32493546272",
+		"photograph": "",
+		"subtitle": "",
+		"website": ""
+	},
+	"projects": {
+		"heading": "Projects",
+		"items": [
+			{
+				"date": "",
+				"id": "1e1edaa5-db45-4c9f-be66-c7a6d51b5287",
+				"isVisible": false,
+				"link": "https://github.com/ArthurDeSchutter/RPI-doorbell",
+				"summary": "een video deurbell met bewegingsensor die gebeurtenissen logt.\n(in vroege devolpment stage)",
+				"title": "camera doorbell "
+			},
+			{
+				"date": "",
+				"id": "6a19f276-aad1-4832-b7d8-2e3d44e5578f",
+				"isVisible": false,
+				"link": "https://github.com/ArthurDeSchutter/ButtonBox",
+				"summary": "een 3d ontworpen doos met knoppen die programmeerbaar zijn op mijn pc met arduino.\ninput matrix systeem werkte niet zo goed dus momenteel werken de rotary encoders niet zo goed.\nword nog gereviseerd.",
+				"title": "flight sim controller"
+			},
+			{
+				"date": "",
+				"id": "d858f810-1518-496d-8765-efd8d96172c5",
+				"link": "",
+				"summary": "dashboard om servers te monitoren D.M.V SNMP en Spiceworks\n",
+				"title": "Server monitoring tool"
+			},
+			{
+				"date": "",
+				"id": "33665b5a-ed3d-4645-acff-27f846831874",
+				"link": "",
+				"summary": "Ticket Portal om tickets in te dienen voor IT om repeterende handelingen in te dijken en te focusen op wat belangrijk is.",
+				"title": "Ticket Portal"
+			}
+		],
+		"visible": true
+	},
+	"public": true,
+	"references": {
+		"heading": "References",
+		"visible": true
+	},
+	"skills": {
+		"heading": "Skills",
+		"items": [
+			{
+				"id": "67025c88-1a5d-417b-bfe2-3503be323dbc",
+				"level": "goed",
+				"name": "Javascript"
+			},
+			{
+				"id": "b9d22f84-2f1c-4696-b19f-4eed6c445a0f",
+				"level": "matig",
+				"name": "c#"
+			},
+			{
+				"id": "2347f5e5-dd1e-4a8b-87f5-7e2290927da3",
+				"level": "goed",
+				"name": "office 365"
+			},
+			{
+				"id": "47a0d54e-d1c2-4f07-a655-4477f1f95cc7",
+				"level": "matig",
+				"name": "mysql"
+			},
+			{
+				"id": "118496cd-1c3e-4c06-b607-e8820e2fac99",
+				"level": "goed",
+				"name": "frameworks(node.js, discord.js, ReactJS ,React Native MVC, bootstrap)"
+			},
+			{
+				"id": "34ee0ff8-0c58-4691-8963-d6c1a26145be",
+				"level": "matig",
+				"name": "python"
+			},
+			{
+				"id": "1479e131-480e-4780-81c2-715e191f936a",
+				"level": "matig",
+				"name": "Adobe photoshop, indesing, illustrator"
+			},
+			{
+				"name": "Fusion360",
+				"level": "matig",
+				"id": "6d764369-74e9-426b-8185-8a60da994472"
+			}
+		],
+		"visible": true
+	},
+	"social": {
+		"heading": "Social Network",
+		"visible": true
+	},
+	"work": {
+		"heading": "Work Experience",
+		"items": [
+			{
+				"company": "KLJ",
+				"endDate": "2020-09-01",
+				"id": "3f378737-cdc7-41f9-97f4-6162981c07a1",
+				"position": "Hoofdleiding",
+				"startDate": "2010-08-01",
+				"summary": "leiding en bij KLJ waarvan 2 jaar hoofdleiding",
+				"website": ""
+			},
+			{
+				"company": "Studentenjob",
+				"endDate": "",
+				"id": "a4e80428-822a-4de0-a7c1-f22c00f79a6c",
+				"position": "Student",
+				"startDate": "2017-07-06",
+				"summary": "studentenjob als winkelbediende en keukenhulp",
+				"website": ""
+			},
+			{
+				"company": "OLO vzw",
+				"endDate": "2021-05-29",
+				"id": "2c75a29a-0640-413f-bcb9-8365f1c6ee0a",
+				"position": "Stage",
+				"startDate": "2021-02-08",
+				"summary": "Stage waarbij een Ticket Portal en server monitoring tool is developed ",
+				"website": ""
+			}
+		],
+		"visible": true
+	}
+}
