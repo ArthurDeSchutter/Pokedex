@@ -18,12 +18,21 @@ const BattleZone = () => {
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 },
   });
-  const getBattleOutcome = async() => {
+  const getBattleOutcome = async () => {
     let winner = await Battle(pokemon, pokemon2);
-    console.log(winner)
-    setwinner(winner)
-    set(state => !state)
+    console.log(winner);
+    setwinner(winner);
+    set((state) => !state);
   };
+  const resetBattle = async () => {
+    console.log('game reset');
+    setwinner(undefined);
+    setpokemon(undefined);
+    setpokemon2(undefined)
+
+    set((state) => !state);
+  };
+
   const renderPokemon = (DropTarget) => {
     setpokemon(DropTarget.dragData);
   };
@@ -66,12 +75,11 @@ const BattleZone = () => {
           </div>
           <Button onClick={getBattleOutcome} variant="danger">
             Battle!
-          </Button>{" "}
+          </Button>
         </a.div>
 
         <a.div
-                  hidden={!flipped}
-
+          hidden={!flipped}
           style={
             (styles.Canvas,
             {
@@ -80,7 +88,15 @@ const BattleZone = () => {
             })
           }
         >
-          {winner !== undefined && <PokemonCard pokemon={winner} />}
+          {winner !== undefined && (
+            <>
+              <h1 style={styles.header}> Winner!</h1>
+              <PokemonCard pokemon={winner} />
+              <Button onClick={resetBattle} variant="success">
+                reset
+              </Button>
+            </>
+          )}
         </a.div>
       </div>
     </>
@@ -113,7 +129,6 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     borderRadius: "10px",
-
     border: `5px solid #003a70`,
     margin: "5px",
   },
