@@ -31,7 +31,7 @@ function App() {
       <Header></Header>
       <div style={{ display: "flex"}}>
       {pokemondata !== undefined && (
-        <div style={{ display: "flex", flexWrap: "wrap", maxWidth: "50%", overflowY: 'scroll', height: '92vh' }}>
+        <div style={{ display: "flex", flexWrap: "wrap", maxWidth: "50%", }}>
 
           {trail.map(({ x, ...otherProps }, i) => (
             <animated.div
@@ -51,7 +51,7 @@ function App() {
         
       )}
       <div style={{ width: "50%", flexWrap: "wrap" }}>
-        <BattleZone/>
+        <BattleZone style={{zIndex:'1'}}/>
       </div>      
       </div>
       <div style={{ display: "flex", flexWrap: "wrap" }}>

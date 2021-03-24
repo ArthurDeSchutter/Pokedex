@@ -19,7 +19,11 @@ const BattleZone = () => {
     config: { mass: 5, tension: 500, friction: 80 },
   });
   const getBattleOutcome = async () => {
-    if (pokemon && pokemon2 !== undefined) {
+    //check if poke 1 and 2 are the same
+    if (pokemon === pokemon2) {
+      alert("pokemon cant fight themselves");
+    }
+    else if (pokemon && pokemon2 !== undefined) {
       let winner = await Battle(pokemon, pokemon2);
       console.log(winner);
       setwinner(winner);
@@ -34,7 +38,7 @@ const BattleZone = () => {
     setpokemon(undefined);
     setpokemon2(undefined);
 
-    set((state) => !state);
+    set(false);
   };
 
   const renderPokemon = (DropTarget) => {
@@ -47,7 +51,7 @@ const BattleZone = () => {
 
   return (
     <>
-      <div>
+      <div >
         <a.div
           hidden={flipped}
           style={
@@ -81,6 +85,10 @@ const BattleZone = () => {
             <Button onClick={getBattleOutcome} variant="danger" style={{margin: '5px'}}>
             Battle!
           </Button>
+          <Button onClick={resetBattle} variant="success">
+                  reset
+                </Button>
+
 
           </div>
         </a.div>
