@@ -35,16 +35,16 @@ const Battle = async(poke1, poke2) => {
 const getAttacks = async(url) => {
     const response = await fetch(url);
     let json = await response.json()
-    //get moves that decrease healt aka attacks
 
-    let attacks = json.affecting_moves.decrease
-
-    return attacks
+    //get moves that decrease healt aka attacks and return those
+    return json.affecting_moves.decrease
 }
+
 const attack = (attack, recievingpokemon) => {
     //attacks always have a value of -1 or -2 so you wannt to add up a negative number 
     return recievingpokemon.hp + attack.change
 }
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }

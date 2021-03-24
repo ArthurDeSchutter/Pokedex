@@ -13,17 +13,19 @@ const BattleZone = () => {
   const [winner, setwinner] = useState();
   const [flipped, set] = useState(false);
 
+  //flip animation
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 },
   });
+
+  //calculate the winner by selecting a random attack 1 by 1 and return the winner
   const getBattleOutcome = async () => {
     //check if poke 1 and 2 are the same
     if (pokemon === pokemon2) {
       alert("pokemon cant fight themselves");
-    }
-    else if (pokemon && pokemon2 !== undefined) {
+    } else if (pokemon && pokemon2 !== undefined) {
       let winner = await Battle(pokemon, pokemon2);
       console.log(winner);
       setwinner(winner);
@@ -32,6 +34,8 @@ const BattleZone = () => {
       alert("please select 2 pokemon");
     }
   };
+
+  //reset the dragtargets 
   const resetBattle = async () => {
     console.log("game reset");
     setwinner(undefined);
@@ -41,6 +45,8 @@ const BattleZone = () => {
     set(false);
   };
 
+  //set the state with a pokemon object 
+  //so it will render when a pokemon is dropped in the droptarget
   const renderPokemon = (DropTarget) => {
     setpokemon(DropTarget.dragData);
   };
@@ -51,7 +57,7 @@ const BattleZone = () => {
 
   return (
     <>
-      <div style={{padding: '10px'}}>
+      <div style={{ padding: "10px" }}>
         <a.div
           hidden={flipped}
           style={
@@ -62,7 +68,7 @@ const BattleZone = () => {
           <div style={styles.Canvas}>
             <h1 style={styles.header}> Battle</h1>
             <div style={{ display: "flex" }}>
-              <DropTarget targetKey="foo" onHit={renderPokemon}>
+            <DropTarget targetKey="foo" onHit={renderPokemon}>
                 {pokemon !== undefined ? (
                   <PokemonCard pokemon={pokemon} />
                 ) : (
@@ -82,14 +88,16 @@ const BattleZone = () => {
                 )}
               </DropTarget>
             </div>
-            <Button onClick={getBattleOutcome} variant="danger" style={{margin: '5px'}}>
-            Battle!
-          </Button>
-          <Button onClick={resetBattle} variant="success">
-                  reset
-                </Button>
-
-
+            <Button
+              onClick={getBattleOutcome}
+              variant="danger"
+              style={{ margin: "5px" }}
+            >
+              Battle!
+            </Button>
+            <Button onClick={resetBattle} variant="success">
+              reset
+            </Button>
           </div>
         </a.div>
 
